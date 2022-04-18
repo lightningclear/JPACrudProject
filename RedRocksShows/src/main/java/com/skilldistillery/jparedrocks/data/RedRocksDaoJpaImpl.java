@@ -26,5 +26,23 @@ public class RedRocksDaoJpaImpl implements RedRocksDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public RedRocks createDate(RedRocks show) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public RedRocks saveDate(RedRocks show) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public RedRocks deleteDate(RedRocks show) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

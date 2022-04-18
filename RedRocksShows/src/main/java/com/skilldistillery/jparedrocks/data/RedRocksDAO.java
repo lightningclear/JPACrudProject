@@ -9,8 +9,8 @@ public interface RedRocksDAO {
 	
 	RedRocks createDate(RedRocks show);
 	
-	RedRocks boolean saveDate(RedRocks show);
+	RedRocks  saveDate(RedRocks show);
 	
-	RedRocks boolean deleteDate(RedRocks show);
+	RedRocks deleteDate(RedRocks show);
 }
 	
