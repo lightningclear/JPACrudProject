@@ -20,7 +20,7 @@ public class RedRocksController {
 	
 	@RequestMapping(path= {"/","home.do"})
 	public String home(Model model) {
-		model.addAttribute("DEBUG", dao.findByID(1));
+		model.addAttribute("RedRocks", dao.findByID(1));
 		return "home";
 	}
 	@RequestMapping(path = "search.do", method = RequestMethod.POST)
@@ -32,7 +32,7 @@ public class RedRocksController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	@RequestMapping(path = "searchByKeyword.do", method = RequestMethod.POST)
 	public ModelAndView findShowByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
 		RedRocks redRocks = dao.findShowByKeyword(keyword);
@@ -50,7 +50,7 @@ public class RedRocksController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	@RequestMapping(path = "save.do", method = RequestMethod.POST)
 	public ModelAndView saveDate(RedRocks show) {
 		ModelAndView mv = new ModelAndView();
 		RedRocks redRocks = dao.saveDate(show);
@@ -59,7 +59,7 @@ public class RedRocksController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
 	public ModelAndView deleteDate(RedRocks show) {
 		ModelAndView mv = new ModelAndView();
 		RedRocks redRocks = dao.deleteDate(show);

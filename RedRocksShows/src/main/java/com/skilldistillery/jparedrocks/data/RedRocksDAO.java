@@ -5,12 +5,12 @@ import com.skilldistillery.jparedrocks.entities.RedRocks;
 public interface RedRocksDAO {
 	RedRocks findByID(int redRocksId);
 	
-	RedRocks findShowByKeyword(String keyword);
+	RedRocks findShowByKeyword(String name);
 	
-	RedRocks createDate(RedRocks show);
+	RedRocks createDate(RedRocks redRockShow);
 	
-	RedRocks saveDate(RedRocks show);
+	RedRocks saveDate(RedRocks redRockShow);
 	
-	RedRocks deleteDate(RedRocks show);
+	RedRocks deleteDate(RedRocks redRockShow);
 }
 	

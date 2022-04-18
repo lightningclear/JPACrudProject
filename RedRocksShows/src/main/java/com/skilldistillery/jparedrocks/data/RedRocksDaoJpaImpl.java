@@ -17,28 +17,36 @@ public class RedRocksDaoJpaImpl implements RedRocksDAO {
 	
 	@Override
 	public RedRocks findByID(int redRocksId) {
-		
 		return em.find(RedRocks.class, redRocksId);
 	}
 
 	@Override
-	public RedRocks findShowByKeyword(String keyword) {
-		return em.find(RedRocks.class, keyword);
+	public RedRocks findShowByKeyword(String name) {
+		RedRocks redrocks = new RedRocks();
+		redrocks.getName(RedRocks.class, name);
+		return em.find(RedRocks.class, name);
+	}
+	
+
+	@Override
+	public RedRocks createDate(RedRocks redRockShow) {
+		RedRocks redrocks = new RedRocks();
+		redrocks.setShowDate(redrocks.getShowDate());
+		return em.find(RedRocks.class, redRockShow);
 	}
 
 	@Override
-	public RedRocks createDate(RedRocks show) {
-		return em.find(RedRocks.class, show);
+	public RedRocks saveDate(RedRocks redRockShow) {
+		RedRocks redrocks = new RedRocks();
+		redrocks.setShowDate(redrocks.getShowDate());
+		em.persist(redrocks);
+		return em.find(RedRocks.class, redRockShow);
 	}
 
 	@Override
-	public RedRocks saveDate(RedRocks show) {
-		return em.find(RedRocks.class, show);
-	}
-
-	@Override
-	public RedRocks deleteDate(RedRocks show) {
-		return em.find(RedRocks.class, show);
+	public RedRocks deleteDate(RedRocks redRockShow) {
+		RedRocks redrocks = em.find(RedRocks.class, redRockShow)
+		return em.find(RedRocks.class, redRockShow);
 	}
 
 	
