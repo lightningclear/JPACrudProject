@@ -50,20 +50,38 @@ public class RedRocksController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "save.do", method = RequestMethod.POST)
-	public ModelAndView saveDate(RedRocks show) {
+	@RequestMapping(path = "update.do", method = RequestMethod.GET)
+	public ModelAndView createDate(RedRocks show,int id) {
 		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.saveDate(show);
+		RedRocks redRocks = dao.createDate(show);
 		mv.addObject("RedRocks", redRocks);
 		mv.setViewName("show");
 		return mv;
 	}
 	
-	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
-	public ModelAndView deleteDate(RedRocks show) {
+	@RequestMapping(path = "update.do", method = RequestMethod.POST)
+	public ModelAndView createDate(RedRocks show,int id) {
 		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.deleteDate(show);
+		RedRocks redRocks = dao.createDate(show);
 		mv.addObject("RedRocks", redRocks);
+		mv.setViewName("show");
+		return mv;
+	}
+	
+//	@RequestMapping(path = "save.do", method = RequestMethod.POST)
+//	public ModelAndView saveDate(RedRocks show) {
+//		ModelAndView mv = new ModelAndView();
+//		RedRocks redRocks = dao.(show);
+//		mv.addObject("RedRocks", redRocks);
+//		mv.setViewName("show");
+//		return mv;
+//	}
+	
+	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
+	public ModelAndView deleteDate(RedRocks show, int id) {
+		ModelAndView mv = new ModelAndView();
+		 dao.deleteDate(show,id);
+		mv.addObject("RedRocks", show);
 		mv.setViewName("show");
 		return mv;
 	}

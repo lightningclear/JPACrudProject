@@ -1,16 +1,20 @@
 package com.skilldistillery.jparedrocks.data;
 
+import java.util.List;
+
 import com.skilldistillery.jparedrocks.entities.RedRocks;
 
 public interface RedRocksDAO {
 	RedRocks findByID(int redRocksId);
 	
-	RedRocks findShowByKeyword(String name);
+	List<RedRocks> displayAll();
 	
-	RedRocks createDate(RedRocks redRockShow);
+	RedRocks createDate(RedRocks createShow);
 	
-	RedRocks saveDate(RedRocks redRockShow);
+	RedRocks updateDate(RedRocks updateShow, int id);
 	
-	RedRocks deleteDate(RedRocks redRockShow);
+//	RedRocks saveDate(RedRocks saveShow);
+	
+	boolean deleteDate(RedRocks redrocks, int id);
 }
 	
