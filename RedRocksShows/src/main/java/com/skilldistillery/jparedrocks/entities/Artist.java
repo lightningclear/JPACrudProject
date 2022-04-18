@@ -22,6 +22,8 @@ public class Artist {
 	
 	@Column(name = " show_time")
 	private String showTime;
+	
+	
 
 	public Artist () {
 		super();

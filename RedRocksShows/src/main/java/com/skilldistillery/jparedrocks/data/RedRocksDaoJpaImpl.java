@@ -23,26 +23,23 @@ public class RedRocksDaoJpaImpl implements RedRocksDAO {
 
 	@Override
 	public RedRocks findShowByKeyword(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(RedRocks.class, keyword);
 	}
 
 	@Override
 	public RedRocks createDate(RedRocks show) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(RedRocks.class, show);
 	}
 
 	@Override
 	public RedRocks saveDate(RedRocks show) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(RedRocks.class, show);
 	}
 
 	@Override
 	public RedRocks deleteDate(RedRocks show) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(RedRocks.class, show);
 	}
+
 	
 }

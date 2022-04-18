@@ -23,26 +23,51 @@ public class RedRocksController {
 		model.addAttribute("DEBUG", dao.findByID(1));
 		return "home";
 	}
-	@RequestMapping(path = "searchId.do", method = RequestMethod.POST)
-	public ModelAndView findById(int redRocksId) {
+	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	public ModelAndView findByID(int redRocksId) {
 		ModelAndView mv = new ModelAndView();
 		RedRocks redRocks = dao.findByID(redRocksId);
 		mv.addObject("RedRocks", redRocks);
-		mv.setViewName("WEB-INF/show.jsp");
+		mv.setViewName("show");
 		return mv;
 	}
-
-	@RequestMapping(path = "searchKeyword.do", method = RequestMethod.GET)
-	public ModelAndView getFilmByKeyword(String keyword) {
-		ModelAndView mv = new ModelAndView();
-		List<Film> film = dao.findFilmByKeyword(keyword);
-		mv.addObject("film", film);
-		mv.setViewName("WEB-INF/searchByKeyword.jsp");
-		return mv;
-	}
-//	@RequestMapping(path = "searchId.do", method = RequestMethod.GET)
-//	public ModelAndView get
 	
+	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	public ModelAndView findShowByKeyword(String keyword) {
+		ModelAndView mv = new ModelAndView();
+		RedRocks redRocks = dao.findShowByKeyword(keyword);
+		mv.addObject("RedRocks", redRocks);
+		mv.setViewName("show");
+		return mv;
+	}
+	
+	@RequestMapping(path = "create.do", method = RequestMethod.POST)
+	public ModelAndView createDate(RedRocks show) {
+		ModelAndView mv = new ModelAndView();
+		RedRocks redRocks = dao.createDate(show);
+		mv.addObject("RedRocks", redRocks);
+		mv.setViewName("show");
+		return mv;
+	}
+	
+	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	public ModelAndView saveDate(RedRocks show) {
+		ModelAndView mv = new ModelAndView();
+		RedRocks redRocks = dao.saveDate(show);
+		mv.addObject("RedRocks", redRocks);
+		mv.setViewName("show");
+		return mv;
+	}
+	
+	@RequestMapping(path = "search.do", method = RequestMethod.POST)
+	public ModelAndView deleteDate(RedRocks show) {
+		ModelAndView mv = new ModelAndView();
+		RedRocks redRocks = dao.deleteDate(show);
+		mv.addObject("RedRocks", redRocks);
+		mv.setViewName("show");
+		return mv;
+	}
+}
 	
 	
 
