@@ -20,5 +20,11 @@ public class RedRocksDaoJpaImpl implements RedRocksDAO {
 		
 		return em.find(RedRocks.class, redRocksId);
 	}
+
+	@Override
+	public RedRocks findShowByKeyword(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
