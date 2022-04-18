@@ -11,6 +11,12 @@
 <body>
 
 <h1>Welcome to Red Rocks</h1>
+<br>
+<br>
+
+<p>Following the Pandemic of the 21st, Colorado's Premiere Music Venue turned out an insane
+ 134 shows booked from April through November 2021. Grossing over $60 million dollars with an attendance of 996,570 attendees
+ Red Rocks<p>
 
 ${DEBUG}
 
