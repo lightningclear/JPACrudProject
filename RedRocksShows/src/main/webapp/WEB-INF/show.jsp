@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
+
+<h1>You've edited this show</h1>
+<h1>You've removed this show</h1>
 
 </body>
 </html>

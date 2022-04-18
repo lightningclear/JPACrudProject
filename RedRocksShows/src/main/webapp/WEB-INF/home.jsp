@@ -19,13 +19,17 @@
 		November 2021. Grossing over $60 million dollars with an attendance of
 		996,570 attendees Red Rocks
 	<p>
+
+		<form action="search.do" method="GET">
+
+
+		<input type="search"
+								placeholder="Search" name="id" aria-label="Search">
+								
+							<button class="btn btn-outline-success my-2 my-sm-0"
+								type="submit">Search</button>
+								</form>
 		
-		${RedRocks.id}
-		${RedRocks.name}
-		${RedRocks.showDate}
-		${RedRocks.genre}
-		${RedRocks.price}$
-		${RedRocks.showTime}
 		
 </body>
 </html>

@@ -20,26 +20,25 @@ public class RedRocksController {
 	
 	@RequestMapping(path= {"/","home.do"})
 	public String home(Model model) {
-		model.addAttribute("RedRocks", dao.findByID(1));
 		return "home";
 	}
-	@RequestMapping(path = "search.do", method = RequestMethod.POST)
-	public ModelAndView findByID(int redRocksId) {
+	@RequestMapping(path = "search.do", method = RequestMethod.GET)
+	public ModelAndView findByID(int id) {
 		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.findByID(redRocksId);
+		RedRocks redRocks = dao.findByID(id);
 		mv.addObject("RedRocks", redRocks);
-		mv.setViewName("show");
+		mv.setViewName("result");
 		return mv;
 	}
 	
-	@RequestMapping(path = "searchByKeyword.do", method = RequestMethod.POST)
-	public ModelAndView findShowByKeyword(String keyword) {
-		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.findShowByKeyword(keyword);
-		mv.addObject("RedRocks", redRocks);
-		mv.setViewName("show");
-		return mv;
-	}
+//	@RequestMapping(path = "searchByKeyword.do", method = RequestMethod.POST)
+//	public ModelAndView List<RedRocks>(String name) {
+//		ModelAndView mv = new ModelAndView();
+//		List<RedRocks>dao.;
+//		mv.addObject("RedRocks", redRocks);
+//		mv.setViewName("show");
+//		return mv;
+//	}
 	
 	@RequestMapping(path = "create.do", method = RequestMethod.POST)
 	public ModelAndView createDate(RedRocks show) {
@@ -50,21 +49,20 @@ public class RedRocksController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "update.do", method = RequestMethod.GET)
-	public ModelAndView createDate(RedRocks show,int id) {
+	@RequestMapping(path = "update.do", method = RequestMethod.POST)
+	public ModelAndView updateDate(RedRocks updateShow,int id) {
 		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.createDate(show);
-		mv.addObject("RedRocks", redRocks);
-		mv.setViewName("show");
+		dao.updateDate(updateShow, id);
+		mv.setViewName("result");
 		return mv;
 	}
 	
-	@RequestMapping(path = "update.do", method = RequestMethod.POST)
-	public ModelAndView createDate(RedRocks show,int id) {
+	@RequestMapping(path = "home.do", method = RequestMethod.GET)
+	public ModelAndView updateShow(RedRocks updateShow, int id) {
 		ModelAndView mv = new ModelAndView();
-		RedRocks redRocks = dao.createDate(show);
-		mv.addObject("RedRocks", redRocks);
-		mv.setViewName("show");
+		updateShow = dao.findByID(id);
+		mv.addObject("RedRocks", updateShow);
+		mv.setViewName("result");
 		return mv;
 	}
 	
@@ -82,7 +80,7 @@ public class RedRocksController {
 		ModelAndView mv = new ModelAndView();
 		 dao.deleteDate(show,id);
 		mv.addObject("RedRocks", show);
-		mv.setViewName("show");
+		mv.setViewName("result");
 		return mv;
 	}
 }
